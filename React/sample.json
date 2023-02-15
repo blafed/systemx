@@ -1,0 +1,32 @@
+{
+  "args": [
+    {
+      "type": "int",
+      "defaultValue": "56",
+      "name": "helloworld"
+    },
+    { "type": "GameObject", "defaultValue": { "__special": "owner" } }
+  ],
+  "method": [
+    {
+      "role": "define",
+      "type": "int",
+      "defaultValue": "56"
+    },
+    {
+      "role": "hook",
+      "type": "Start",
+      "pass": [
+        {
+          "type": "function",
+          "method": [
+            {
+              "role": "call",
+              "pass": [{ "__raw": "" }, {}]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

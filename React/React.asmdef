@@ -1,0 +1,16 @@
+{
+    "name": "React",
+    "rootNamespace": "",
+    "references": [
+        "GUID:a02d865e3b856c7498cbc30c531d4443"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
