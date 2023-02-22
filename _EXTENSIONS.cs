@@ -1,4 +1,6 @@
-﻿using System;
+﻿//TODO: PLEASE DON"T FORGET TO UPDATE THIS NUMBER BEFORE PUSH
+//serial ver 1
+using System;
 using System.Collections.Generic;
 using System.Collections;
 //using Arsenal;
@@ -57,6 +59,18 @@ public static partial class Extensions2
     public const int TEAM_DIS = 2;
     public const float E = (float)System.Math.E;
 
+    public static string capitalize(this string s)
+    {
+        switch (s)
+        {
+            case null: throw new ArgumentNullException();
+            case "": throw new ArgumentException($"{nameof(s)} cannot be empty", nameof(s));
+            default: return s[0].ToString().ToUpper() + s.Substring(1);
+        }
+    }
+    public static float signOrZero(this float f) => f == 0 ? 0 : f > 0 ? 1 : -1;
+    public static float sign(this float f) => f >= 0 ? 1 : -1;
+    public static Vector2 getNormal(this Vector2 v) => new Vector2(-v.y, v.x);
     public static void iterate(this int count, Action<int> action)
     {
         for (int j = 0; j < count; j++)
@@ -1522,7 +1536,7 @@ public static partial class Extensions2
     //}
     public static T getOrDefault<T>(this IReadOnlyList<T> list, int index, T def = default(T))
     {
-        if (index < list.Count)
+        if (index < list.Count && index >= 0)
             return list[index];
         return def;
     }
