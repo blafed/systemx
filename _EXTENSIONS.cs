@@ -1,5 +1,5 @@
 ﻿//TODO: PLEASE DON"T FORGET TO UPDATE THIS NUMBER BEFORE PUSH
-//serial ver 1
+//serial ver 2
 using System;
 using System.Collections.Generic;
 using System.Collections;
@@ -59,6 +59,7 @@ public static partial class Extensions2
     public const int TEAM_DIS = 2;
     public const float E = (float)System.Math.E;
 
+    public static Rect rectFromCenter(Vector2 center, Vector2 size) => new Rect(center - size * .5f, size);
     public static string capitalize(this string s)
     {
         switch (s)
