@@ -1,5 +1,5 @@
 ﻿//TODO: PLEASE DON"T FORGET TO UPDATE THIS NUMBER BEFORE PUSH
-//serial ver 2
+//serial ver 3
 using System;
 using System.Collections.Generic;
 using System.Collections;
@@ -1757,10 +1757,10 @@ public static partial class Extensions2
     {
         return new Vector3(v.x, yValue, v.y);
     }
-    [System.Obsolete("use toGrid instead")]
-    public static Vector3 toVector3(this Vector2 v, float yValue)
+    // [System.Obsolete("use toGrid instead")]
+    public static Vector3 toVector3(this Vector2 v, float zValue)
     {
-        return new Vector3(v.x, yValue, v.y);
+        return new Vector3(v.x, v.y, zValue);
     }
 
     public static T getComponentCached<T>(this Component c, ref T field)
