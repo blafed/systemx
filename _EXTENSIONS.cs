@@ -1,5 +1,5 @@
 ﻿//TODO: PLEASE DON"T FORGET TO UPDATE THIS NUMBER BEFORE PUSH
-//serial ver 4
+//serial ver 5
 using System;
 using System.Collections.Generic;
 using System.Collections;
@@ -59,6 +59,10 @@ public static partial class Extensions2
     public const int TEAM_DIS = 2;
     public const float E = (float)System.Math.E;
 
+    public static bool contains(this BoundingSphere b, Vector3 point)
+    {
+        return (b.position - point).sqrMagnitude < b.radius.squared();
+    }
     public static Rect rectFromCenter(Vector2 center, Vector2 size) => new Rect(center - size * .5f, size);
     public static string capitalize(this string s)
     {
