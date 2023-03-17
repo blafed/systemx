@@ -119,7 +119,7 @@ public class Sketch : MonoBehaviour
 {
     public Wache wache => this.weird.wache;
     public Weird weird => _weird ? _weird :
-    _weird = this.getComponentCachedInParent(ref _weird) ? _weird : _weird = gameObject.AddComponent<Weird>();
+    _weird = this.cachedComponentInParent(ref _weird) ? _weird : _weird = gameObject.AddComponent<Weird>();
     Weird _weird;
 
     private void OnEnable()

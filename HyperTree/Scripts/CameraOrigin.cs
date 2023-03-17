@@ -53,7 +53,7 @@ public class CameraOrigin : MonoBehaviour
     public CameraManipulator prevManipulator { get; private set; }
     public CameraManipulator nextManipulator { get; private set; }
 
-    public new Camera camera => this.getComponentCachedInChild(ref _camera);
+    public new Camera camera => this.cachedComponentInChild(ref _camera);
 
     Camera _camera;
 

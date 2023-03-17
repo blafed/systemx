@@ -1,5 +1,5 @@
 ﻿//TODO: PLEASE DON"T FORGET TO UPDATE THIS NUMBER BEFORE PUSH
-//serial ver 3
+//serial ver 4
 using System;
 using System.Collections.Generic;
 using System.Collections;
@@ -1268,19 +1268,19 @@ public static partial class Extensions2
         t.localEulerAngles = t.localEulerAngles.setZ(v.x);
 
     }
-    public static Transform getChildCached(this Transform t, int index, ref Transform cache)
+    public static Transform cachedChild(this Transform t, int index, ref Transform cache)
     {
         if (cache)
             return cache;
         return cache = t.GetChild(index);
     }
-    public static Transform getChildCached(this Transform t, string name, ref Transform cache)
+    public static Transform cachedChild(this Transform t, string name, ref Transform cache)
     {
         if (cache)
             return cache;
         return cache = t.Find(name);
     }
-    public static Transform getChildCached(this Transform t, string name, ref Transform cache, ref bool notExist)
+    public static Transform cachedChild(this Transform t, string name, ref Transform cache, ref bool notExist)
     {
         if (cache || notExist)
             return cache;
@@ -1763,7 +1763,7 @@ public static partial class Extensions2
         return new Vector3(v.x, v.y, zValue);
     }
 
-    public static T getComponentCached<T>(this Component c, ref T field)
+    public static T cachedComponent<T>(this Component c, ref T field)
     {
         if (field != null && !field.Equals(null))
             return field;
@@ -1771,64 +1771,64 @@ public static partial class Extensions2
             return (field = c.GetComponent<T>());
     }
 
-    public static T getComponentCachedInParent<T>(this Component c, ref T field, ref bool notExist)
+    public static T cachedComponentInParent<T>(this Component c, ref T field, ref bool notExist)
     {
         if (notExist)
             return field;
         else if (field == null)
         {
-            notExist = c.getComponentCachedInParent(ref field) == null;
+            notExist = c.cachedComponentInParent(ref field) == null;
         }
 
         return field;
     }
-    public static T getComponentCached<T>(this Component c, ref T field, ref bool notExist)
+    public static T cachedComponent<T>(this Component c, ref T field, ref bool notExist)
     {
         if (notExist)
             return field;
         else if (field == null)
         {
-            notExist = c.getComponentCached(ref field) == null;
+            notExist = c.cachedComponent(ref field) == null;
         }
 
         return field;
     }
-    public static T getComponentCachedInChild<T>(this Component c, ref T field, ref bool notExist)
+    public static T cachedComponentInChild<T>(this Component c, ref T field, ref bool notExist)
     {
         if (notExist)
             return field;
         else if (field == null)
         {
-            notExist = c.getComponentCachedInChild(ref field) == null;
+            notExist = c.cachedComponentInChild(ref field) == null;
         }
 
         return field;
     }
 
-    public static T getComponentCachedInParent<T>(this Component c, ref T field)
+    public static T cachedComponentInParent<T>(this Component c, ref T field)
     {
         if (field != null)
             return field;
         else
             return (field = c.GetComponentInParent<T>());
     }
-    public static T getComponentCachedInParentNotThis<T>(this Component c, ref T field)
+    public static T cachedComponentInParentNotThis<T>(this Component c, ref T field)
     {
         if (field != null)
             return field;
         else
             return (field = c.gameObject.getComponentInParentNotthis<T>());
     }
-    public static T getComponentCachedInChild<T>(this Component c, ref T field)
+    public static T cachedComponentInChild<T>(this Component c, ref T field)
     {
         if (field != null)
             return field;
         else
             return (field = c.GetComponentInChildren<T>());
     }
-    public static T getComponentCached<T>(this GameObject go, ref T field)
+    public static T cachedComponent<T>(this GameObject go, ref T field)
     {
-        return go.transform.getComponentCached(ref field);
+        return go.transform.cachedComponent(ref field);
     }
 
     public static Vector3 WorldToNormalizedViewportPoint(this Camera camera, Vector3 point)

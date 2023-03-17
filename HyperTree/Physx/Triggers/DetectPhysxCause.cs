@@ -11,8 +11,8 @@ public class DetectPhysxCause : MonoBehaviour
     public int emit = Kint.physx;
 
     Weird _weird;
-    public Weird weird => this.getComponentCachedInParent(ref _weird);
-    Subript subript => this.getComponentCached(ref _subript);
+    public Weird weird => this.cachedComponentInParent(ref _weird);
+    Subript subript => this.cachedComponent(ref _subript);
     Subript _subript;
     // Start is called before the first frame update
 
@@ -67,7 +67,7 @@ public class DetectPhysxCause : MonoBehaviour
         public virtual PhysxDimension dimension => PhysxDimension._3D;
         public abstract PhysxCauseMode mode { get; }
         public abstract PhysxCauseFunction function { get; }
-        public DetectPhysxCause component => this.getComponentCached(ref _component);
+        public DetectPhysxCause component => this.cachedComponent(ref _component);
         DetectPhysxCause _component;
 
         void doKint()

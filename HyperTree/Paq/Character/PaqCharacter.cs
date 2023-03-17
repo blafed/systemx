@@ -7,7 +7,7 @@ namespace Paq
     public class PaqCharacter : PaqMovable
     {
         CapsuleCollider _collider;
-        public new CapsuleCollider collider => this.getComponentCached(ref _collider);
+        public new CapsuleCollider collider => this.cachedComponent(ref _collider);
 
 
 

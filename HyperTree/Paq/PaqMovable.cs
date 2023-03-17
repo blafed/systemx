@@ -10,7 +10,7 @@ public class PaqMovable : MonoBehaviour
     public List<Vector3> netVelocity = new List<Vector3>();
     public float gravityFactor = 1;
 
-    public Rigidbody rb => this.getComponentCached(ref _rb);
+    public Rigidbody rb => this.cachedComponent(ref _rb);
     public Vector3 velocity => rb.velocity;
     Rigidbody _rb;
 
