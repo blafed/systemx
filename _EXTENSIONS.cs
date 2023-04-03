@@ -1,5 +1,5 @@
 ﻿//TODO: PLEASE DON"T FORGET TO UPDATE THIS NUMBER BEFORE PUSH
-//serial ver 5
+//serial ver 6
 using System;
 using System.Collections.Generic;
 using System.Collections;
@@ -59,6 +59,11 @@ public static partial class Extensions2
     public const int TEAM_DIS = 2;
     public const float E = (float)System.Math.E;
 
+    public static string[] lines(this string text)
+    {
+        //splits the text into lines
+        return text.Split(Environment.NewLine.ToCharArray());
+    }
     public static bool contains(this BoundingSphere b, Vector3 point)
     {
         return (b.position - point).sqrMagnitude < b.radius.squared();
